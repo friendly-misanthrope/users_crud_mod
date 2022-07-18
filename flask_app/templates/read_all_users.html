@@ -8,6 +8,7 @@
     <title>Read All Users</title>
 </head>
 <body>
+    <h1>Registered Users</h1>
     <table class="table table-hover">
         <thead>
           <tr>
@@ -26,14 +27,20 @@
                 <td>{{ user.last_name }}</td>
                 <td>{{ user.email }}</td>
                 <td>
-                  <a href="/users/{{ user.id }}">Show</a>
-                  <a href="/users/{{ user.id }}/edit">Edit</a>
+                  <a href="/users/{{ user.id }}">Show |</a>
+                  <a href="/users/{{ user.id }}/edit">Edit |</a>
                   <a href="/users/{{ user.id }}/delete">Delete</a>
                 </td>
               </tr>
               {% endfor %}
         </tbody>
       </table>
+
+      {% if not all_users %}
+      <div>
+        <p>There aren't any users in the database yet! Click 'Add User' below to create one!</p>
+      </div>
+      {% endif %}
 
       <div class="buttons">
         <form action="/create">

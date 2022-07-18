@@ -59,4 +59,4 @@ class User:
     @classmethod
     def reset_ids(cls):
         query = "ALTER TABLE users AUTO_INCREMENT = 1;"
-        connectToMySQL('users').query_db(query)
+        connectToMySQL(cls.db_name).query_db(query)

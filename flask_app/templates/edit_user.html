@@ -11,21 +11,22 @@
     <form action="/users/{{ one_user.id }}/process_edit_user" class="input-form" method="POST">
         <div class="form-group">
           <label for="fname">First Name:</label>
-          <input type="text" name="fname" class="form-control" value="{{ one_user.first_name }}" autofocus>
+          <input type="text" name="fname" class="form-control" value="{{ one_user.first_name }}" autofocus required>
         </div>
 
         <div class="form-group">
           <label for="lname">Last Name:</label>
-          <input type="text" name="lname" class="form-control" value="{{ one_user.last_name }}">
+          <input type="text" name="lname" class="form-control" value="{{ one_user.last_name }}" required>
         </div>
 
         <div class="form-group">
             <label for="email" name="email">Email:</label>
-            <input type="email" name="email" class="form-control" value="{{ one_user.email }}">
+            <input type="email" name="email" class="form-control" value="{{ one_user.email }}" required>
         </div>
 
         <div class="buttons">
             <button type="submit" class="btn btn-primary">Submit</button>
+            
             <a href="/">
               <button type="button" class="btn btn-secondary">Cancel</button>
             </a>

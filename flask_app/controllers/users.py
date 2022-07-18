@@ -9,13 +9,16 @@ def index():
     print(users)
     return render_template('read_all_users.html', all_users = users)
 
+
 @app.route('/users')
 def redirect_users():
     return redirect('/')
 
+
 @app.route('/create')
 def create():
     return render_template('create.html')
+
 
 @app.route('/users/<int:id>/')
 def view_user(id):
@@ -23,8 +26,6 @@ def view_user(id):
         "id": id
     }
     return render_template('read_one_user.html', id=id, one_user = user.User.get_one_user(data))
-
-
 
 
 @app.route('/users/<int:id>/edit')
